@@ -1,0 +1,15 @@
+table {
+    border: 4px solid #a4ecba; 
+    border-collapse: collapse;
+}
+button:hover {
+    background-color: #a4ecba; 
+}
+span{
+    color:goldenrod;
+}
+th, td {
+    border: 2px solid #a4ecba; 
+    padding: 12px;
+    text-align: center;
+}

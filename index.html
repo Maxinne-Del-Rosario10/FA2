@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FA 2 - MULTIPLICATION TABLE</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+
+
+<body>
+   <center>
+    <p>Please put numbers between 2 and 10:</p></br>
+    <input type="text" id="startInput" name="startInput"><span>by</span>
+    <input type="text" id="endInput" name="endInput">
+    </br></br>
+    <button onclick="generateMultiplicationTable();">Generate Table</button>
+    </br></br>
+    <div id="TABLEOUTPUT"></div>
+    </center>
+
+
+    <script>
+        function validateInputs(start, end)
+        { start = document.getElementById("startInput").value;
+            end = document.getElementById("endInput").value;
+            if (start > 10 || end > 10 || start < 2 || end < 2) {
+                alert("Enter values between 2 and 10 only...");
+                return false; }
+            return true;
+        }
+        function generateMultiplicationTable()
+        { var startValue = document.getElementById("startInput").value;
+            var endValue = document.getElementById("endInput").value;
+            if (!validateInputs(startValue, endValue)) {
+                return;
+            }
+            document.getElementById("TABLEOUTPUT").innerHTML = "";
+            var tableHTML = "<table>";
+            for (var row = 1; row <= startValue; row++) { 
+                tableHTML += "<tr>";
+                for (var column = 1; column <= endValue; column++) { 
+                    tableHTML += "<td>" + (row * column) + "</td>";
+                }
+                tableHTML += "</tr>";       
+            }
+            tableHTML += "</table>";
+            document.getElementById("TABLEOUTPUT").innerHTML = tableHTML;
+                
+        }        
+    </script>
+
+</body>
+</html>
